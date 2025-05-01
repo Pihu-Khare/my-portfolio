@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pihu Khare - Portfolio</title>
+    <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header with Navigation -->
+        <header class="header">
+            <div class="profile-container">
+                <div class="profile-image">
+                    <!-- Replace with your actual photo -->
+                    <img src="pihuportfoliophoto.jpg" alt="Pihu Khare" onerror="this.src='https://via.placeholder.com/150'">
+                </div>
+                <div class="profile-info">
+                    <h1>Pihu Khare</h1>
+                    <p>Bridging Code & Creativity in Web Development!</p>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-section="about">About Me</a></li>
+                    <li><a href="#" class="nav-link" data-section="projects">My Projects</a></li>
+                    <li><a href="#" class="nav-link" data-section="contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Main Content Area -->
+        <main class="content">
+            <!-- About Section -->
+            <section id="about-section" class="content-section active">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <p>I am a pre-final year BTech Computer Science student, specializing in Cloud Computing and Virtualization Technology.</p>
+                    <p>I have worked with different cloud platforms like Amazon Web Services and Google Cloud Platform.</p>
+                    <p>Currently, I am working on Container Orchestration and Automation using Kubernetes and Docker.</p>
+                    <p>I am a resilient problem solver who is passionate about learning and implementing new technologies.</p>
+                    <p>Over the last two semesters, I have worked on projects like:</p>
+                    <ul>
+                        <li>Sentiment Analysis using NLP and Machine Learning.</li>
+                        <li>Medical dispenser web application using Java, Node.js, and MongoDB.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects-section" class="content-section">
+                <h2>My Projects</h2>
+                <div class="project-grid">
+                    <article class="project-card">
+                        <img src="images/project10.png" alt="Project 10" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="project-content">
+                            <h3>Orchestrate Microservices with Docker Swarm ⚓</h3>
+                            <a href="#" class="live-btn">Live</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="images/ml-project.png" alt="Project ML" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="project-content">
+                            <h3>Visualising using ML ⚓</h3>
+                            <a href="https://dsougkhdghlsidjvlskmvlskmldsknvlskdn.streamlit.app/" class="live-btn">Live</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="images/project11.png" alt="Project 11" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="project-content">
+                            <h3>Streamlit App on AWS EC2 ☁️</h3>
+                            <a href="#" class="live-btn">Live</a>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <img src="images/project12.webp" alt="Project 12" onerror="this.src='https://via.placeholder.com/300x200'">
+                        <div class="project-content">
+                            <h3>Docker Bakery Foundation 🍞</h3>
+                            <a href="#" class="live-btn">Live</a>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact-section" class="content-section">
+                <h2>Contact</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <p><strong>Email:</strong> pihujk2508@gmail.com</p>
+                        <p><strong>Phone:</strong> 6232160637</p>
+                    </div>
+                    <div class="social-links">
+                        <!-- Add your social media links here if needed -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.content-section');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Remove active class from all links and sections
+                    navLinks.forEach(link => link.classList.remove('active'));
+                    sections.forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to clicked link
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const sectionId = this.getAttribute('data-section') + '-section';
+                    document.getElementById(sectionId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
